@@ -1,1 +1,1 @@
-# learning-verilog
+# learning-digital-circuit
