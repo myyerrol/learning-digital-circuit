@@ -12,6 +12,7 @@ module opt_1(
     output [7 : 0] o_k,
     output [7 : 0] o_l
 );
+
     assign o_c = i_a & i_b;
     assign o_d = i_a || i_b;
     assign o_e = i_a ^ i_b;
