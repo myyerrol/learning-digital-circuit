@@ -26,8 +26,8 @@ initial begin
 end
 
 
-defparam opt_2_ins.ADDR_WIDTH = 4;
-opt_2 opt_2_ins(
+defparam opt_2_inst.ADDR_WIDTH = 4;
+opt_2 opt_2_inst(
     .i_clk(clk),
     .i_rst_n(rst_n),
     .o_data()

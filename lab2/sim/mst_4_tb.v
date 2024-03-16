@@ -44,7 +44,7 @@ end
 mst_4 #(
     .MIN_VALUE(8'd10),
     .MAX_VALUE(8'd13)
-) mst_4_ins (
+) mst_4_inst (
     .clk(clk),
     .rst(rst),
     .enable(en),

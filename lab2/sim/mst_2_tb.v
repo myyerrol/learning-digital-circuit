@@ -33,7 +33,7 @@ initial begin
     $finish;
 end
 
-mst_2 mst_2_ins(
+mst_2 mst_2_inst(
     .scancode(scancode),
     .left(),
     .down(),

@@ -19,7 +19,7 @@ initial begin
     $dumpvars(0, mst_1_tb);
 end
 
-mst_1 mst_1_ins(
+mst_1 mst_1_inst(
     .cpu_overheated(1'b1),
     .shut_off_computer(),
     .arrived(1'b0),

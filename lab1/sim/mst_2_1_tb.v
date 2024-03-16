@@ -19,7 +19,7 @@ initial begin
     $dumpvars(0, mst_2_1_tb);
 end
 
-mst_2_1 mst_2_1_ins(
+mst_2_1 mst_2_1_inst(
     .i_num_1(8'd10),
     .i_num_2(8'd09),
     .o_num()

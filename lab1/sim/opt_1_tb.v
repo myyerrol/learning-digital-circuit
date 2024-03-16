@@ -25,7 +25,7 @@ initial begin
     $dumpvars(0, opt_1_tb);
 end
 
-opt_1 opt_1_ins(
+opt_1 opt_1_inst(
     .i_clk(clk),
     .i_rst_n(rst_n),
     .o_data()
