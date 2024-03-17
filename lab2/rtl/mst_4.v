@@ -11,11 +11,11 @@ module mst_4 #(
     reg [7 : 0] counter;
     always @(posedge clk) begin
         if (rst) begin
-            counter <= 1'b0;
+            counter <= 0;
         end
         else begin
             if (enable) begin
-                if (counter == 1'b0 || counter >= MAX_VALUE) begin
+                if (counter == 8'b0 || counter >= MAX_VALUE) begin
                     counter <= MIN_VALUE;
                 end
                 else begin
@@ -23,7 +23,7 @@ module mst_4 #(
                 end
             end
             else begin
-                counter <= 1'b0;
+                counter <= 0;
             end
         end
     end
