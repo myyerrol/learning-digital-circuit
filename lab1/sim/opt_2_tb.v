@@ -1,4 +1,4 @@
-`timescale 1ns/1ns
+`timescale 1ns / 1ps
 
 module opt_2_tb();
 
