@@ -1,27 +1,29 @@
 module opt_1(
-    input  [7 : 0] i_a,
-    input  [7 : 0] i_b,
-    output [7 : 0] o_c,
-    output [7 : 0] o_d,
-    output [7 : 0] o_e,
-    output [7 : 0] o_f,
-    output [7 : 0] o_g,
-    output [7 : 0] o_h,
-    output [7 : 0] o_i,
-    output [7 : 0] o_j,
-    output [7 : 0] o_k,
-    output [7 : 0] o_l
+    input               i_clk,
+    input               i_rst_n,
+    output reg [31 : 0] o_data
 );
 
-    assign o_c = i_a & i_b;
-    assign o_d = i_a || i_b;
-    assign o_e = i_a ^ i_b;
-    assign o_f = ~i_a;
-    assign o_g = {i_a[2 : 0], i_b[3 : 0], {1'b1}};
-    assign o_h = i_b >>> 3;
-    assign o_i = &i_b;
-    assign o_j = (i_a > i_b) ? i_a : i_b;
-    assign o_k = i_a - i_b;
-    assign o_l = !i_a;
+    reg [ 1 : 0] r_cnt;
+    reg [31 : 0] r_gpr[3 : 0];
+
+    always @(posedge i_clk) begin
+        if (!i_rst_n) begin
+            r_cnt    <= 2'b0;
+            r_gpr[0] <= 32'd1;
+            r_gpr[1] <= 32'd2;
+            r_gpr[2] <= 32'd3;
+            r_gpr[3] <= 32'd4;
+        end
+        else begin
+            if (r_cnt == 3) begin
+                r_cnt <= 2'b0;
+            end
+            else begin
+                r_cnt <= r_cnt + 1'b1;
+            end
+            o_data <= r_gpr[r_cnt];
+        end
+    end
 
 endmodule

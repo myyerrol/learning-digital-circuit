@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
 
-module opt_1_tb();
+module opt_2_tb();
 
 parameter CYCLE = 10;
 
@@ -21,11 +21,13 @@ always begin
 end
 
 initial begin
-    $dumpfile("build/opt_1.vcd");
-    $dumpvars(0, opt_1_tb);
+    $dumpfile("build/opt_2.vcd");
+    $dumpvars(0, opt_2_tb);
 end
 
-opt_1 opt_1_ins(
+
+defparam opt_2_ins.ADDR_WIDTH = 4;
+opt_2 opt_2_ins(
     .i_clk(clk),
     .i_rst_n(rst_n),
     .o_data()
