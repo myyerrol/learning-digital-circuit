@@ -1,6 +1,6 @@
 module opt_1(
     input              clk,
-    input              rst,
+    input              rst_n,
     input      [1 : 0] sw,
     input              dir,
     output reg [3 : 0] led
@@ -20,7 +20,7 @@ module opt_1(
     end
 
     always @(posedge clk) begin
-        if (rst) begin
+        if (!rst_n) begin
             count <= 0;
         end
         else if (count >= timer_cnt) begin
@@ -32,7 +32,7 @@ module opt_1(
     end
 
     always @(posedge clk) begin
-        if (rst) begin
+        if (!rst_n) begin
             led <= 4'b0001;
         end
         else if (count == timer_cnt) begin

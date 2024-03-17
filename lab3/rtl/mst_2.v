@@ -1,14 +1,14 @@
 module mst_2 #(
-    parameter MAX_VALUE = 32'd000_099_999
+    parameter MAX_VALUE = 32'd199_999_999
 ) (
     input              clk,
-    input              rst,
+    input              rst_n,
     output reg [3 : 0] led
 );
 
     reg [31 : 0] counter;
     always @(posedge clk) begin
-        if (rst) begin
+        if (!rst_n) begin
             counter <= 32'b0;
             led     <= 4'b0000;
         end
@@ -18,7 +18,7 @@ module mst_2 #(
                 led     <= ~led;
             end
             else begin
-                counter <= counter + 32'b1;
+                counter <= counter + 1'b1;
                 led     <= led;
             end
         end

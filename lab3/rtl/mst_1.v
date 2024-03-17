@@ -3,6 +3,6 @@ module mst_1(
     output [3 : 0] led
 );
 
-    assign led = sw;
+    assign led = ~sw;
 
 endmodule

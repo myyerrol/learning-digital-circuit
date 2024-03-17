@@ -4,7 +4,7 @@ module mst_1_tb();
 
 parameter CYCLE = 10;
 
-reg clk;
+reg         clk;
 reg [3 : 0] sw;
 
 initial begin

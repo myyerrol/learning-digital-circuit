@@ -5,13 +5,13 @@ module mst_2_tb();
 parameter CYCLE = 10;
 
 reg clk;
-reg rst;
+reg rst_n;
 
 initial begin
-    clk = 1'b1;
-    rst = 1'b1;
+    clk   = 1'b1;
+    rst_n = 1'b0;
     #10;
-    rst = 1'b0;
+    rst_n = 1'b1;
 end
 
 always begin
@@ -25,7 +25,7 @@ end
 
 mst_2 mst_2_inst(
     .clk(clk),
-    .rst(rst),
+    .rst_n(rst_n),
     .led()
 );
 
